@@ -1,35 +1,40 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="scripts/jquery.js"></script>
-    <script src="scripts/md5.js"></script>
-    <script src="scripts/common.js"></script>
-    <script src="scripts/register.js"></script>
-    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <!-- <script src="/static/scripts/jquery.js"></script>
+    <script src="/static/scripts/md5.js"></script>
+    <script src="/static/scripts/common.js"></script>
+    <script src="/static/scripts/register.js"></script> -->
+    <link href="/static/css/main.css" type="text/css" rel="stylesheet">
 </head>
+
 <body>
-<div class="wrapper">
-    <form class="loginBox">
-        <div class="loginBoxCenter">
-            <div class="err_msg" id="error_hint">错误提示</div>
-            <label for="username">用户名：</label>
-            <input type="text" id="username" name="username" placeholder="请输入用户名" class="loginInput">
-            <br>
-            <label for="password">密码：</label>
-            <input type="password" id="password" name="password" placeholder="请输入密码" class="loginInput">
-            <br>
-            <label for="repeat-password">确认密码：</label>
-            <input type="password" id="repeat-password" name="password" placeholder="请再次确认密码" class="loginInput">
-            <br>
-          
-            <a href="login.html" class="forgetLink">已有账号？去登录</a>
-        </div>
-        <div class="loginBoxButtons">
-            <button id="btnReset" type="reset" class="resetBtn">重置</button>
-            <button id="btnRegister" type="button" class="loginBtn">注册</button>
-        </div>
-    </form>
-</div>
+    <div class="wrapper">
+        <form class="loginBox" action="register" method="POST">
+            <div class="loginBoxCenter">
+                {% if err_msg%}
+                <div class="err_msg" id="error_hint">提示：{{err_msg}}</div>
+                {% endif%}
+                <label for="username">用户名：</label>
+                <input type="text" id="username" name="username" placeholder="请输入用户名" class="loginInput" value="{{ request.form['username'] }}">
+                <br>
+                <label for="password">密码：</label>
+                <input type="password" id="password" name="password" placeholder="请输入密码" class="loginInput">
+                <br>
+                <label for="repeat-password">确认密码：</label>
+                <input type="password" id="repeat-password" name="rpassword" placeholder="请再次确认密码" class="loginInput">
+                <br>
+
+                <a href="login" class="forgetLink">已有账号？去登录</a>
+            </div>
+            <div class="loginBoxButtons">
+                <button id="btnReset" type="reset" class="resetBtn">重置</button>
+                <button id="btnRegister" type="submit" class="loginBtn">注册</button>
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>

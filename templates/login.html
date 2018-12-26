@@ -15,7 +15,7 @@
         <form class="loginBox" action="login" method="POST">
             <div class="loginBoxCenter">
                 {% if err_msg%}
-                <div class="err_msg" id="error_hint">错误提示：{{err_msg}}</div>
+                <div class="err_msg" id="error_hint">提示：{{err_msg}}</div>
                 {% endif%}
                 <label for="username" vertical-align: middle>账号：</label>
                 <div>
@@ -32,7 +32,7 @@
                 <button id="btnReset" type="reset" class="resetBtn">重置</button>
                 <button id="btnRegister" type="submit" class="loginBtn">登录</button>
                 <br>
-                <a href="register.html" class="forgetLink">还没有账号？去注册</a>
+                <a href="register" class="forgetLink">还没有账号？去注册</a>
             </div>
         </form>
     </div>
