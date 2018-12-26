@@ -1,6 +1,6 @@
 from config import db
 
-class Product(db.Model):
+class Product_details(db.Model):
     productID = db.Column(db.Integer, primary_key=True,autoincrement=True)
     brand=db.Column(db.String(30))
     type=db.Column(db.String(30))
