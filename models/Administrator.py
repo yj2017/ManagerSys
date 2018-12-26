@@ -3,7 +3,7 @@ from config import db
 
 
 class Administrator(db.Model):
-    uid = db.Column(db.Integer, primary_key=True)
+    uid = db.Column(db.Integer, primary_key=True,autoincrement=True)
     uname = db.Column(db.String(30))
     pswd = db.Column(db.String(30))
 
