@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/md5.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/register.js"></script>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <form class="loginBox">
+        <div class="loginBoxCenter">
+            <div class="err_msg" id="error_hint">错误提示</div>
+            <br>
+            <label for="birthday">生日：</label>
+            <input type="text" id="birthday" name="birthday" placeholder="出生日期" class="loginInput">
+            <br>
+            <label for="sex">性别：</label>
+            <input type="text" id="sex" name="sex" placeholder="性别" class="loginInput">
+            <br>
+            <label for="address">收货地址：</label>
+            <input type="text" id="address" name="address" placeholder="收货地址" class="loginInput">
+            <br>
+            <label for="telephone">移动电话：</label>
+            <input type="text" id="telephone" name="telephone" placeholder="电话" class="loginInput">
+            <br>
+           
+        </div>
+        <div class="loginBoxButtons">
+            <button id="btnReset" type="reset" class="resetBtn">重置</button>
+            <button id="btnRegister" type="button" class="loginBtn">确定</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

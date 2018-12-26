@@ -3,9 +3,9 @@
     visibility: hidden;
 }
 
-html {
+/* html {
     background-color: rgb(84, 190, 141);
-}
+} */
 
 .wrapper {
     margin: 140px auto;
@@ -81,10 +81,20 @@ html {
 }
 
 .loginBox a.forgetLink {
-    color: #ABABAB;
+    color: rgb(26, 228, 211);
     cursor: pointer;
     float: right;
     font: 11px/20px Arial;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+/* 链接样式 */
+a.link_style{
+    color: rgb(26, 228, 211);;
+    cursor: pointer;
+    float: right;
+    font: 15px/20px Arial;
     text-decoration: none;
     vertical-align: middle;
 }
@@ -107,3 +117,65 @@ html {
     filter: alpha(Opacity=80);
     opacity: 0.5;
 }
+
+.images{
+    width: 160;
+    height: 160;
+}
+ul{
+    display:inline;
+    white-space: nowrap;
+}
+ul li{
+    padding: 10px 20px;
+    display: inline-block;
+    white-space:nowrap;
+
+}
+.main_top{
+    background-color: #F0F4F6;
+    height: 40px;
+   
+}
+.main_search {
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    /* margin: 100px auto 0 auto; */
+}
+.parent_search {
+    position: relative;
+}
+.search {
+    margin:0cm 10cm 10cm 0cm;
+    width: 500px;
+    height: 40px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    position: absolute;
+}
+.btnSearch {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    background-image: url("\pictures\searchBtn.jpg")  ;
+    background-repeat: no-repeat;
+    background-position: -2px -99px;
+    top: 6px;
+    left: 460px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.main_imgs{
+    margin: 20px auto 0 auto; 
+
+}
+.list_icon{
+    width: 20px;
+    height: 20px;
+}
+
+
