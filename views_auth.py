@@ -2,12 +2,6 @@ from decorators import *
 from config import *
 
 
-@app.route('/secret_page')
-@login_required
-def secret_page():
-    pass
-
-
 @app.route('/')
 @app.route('/login', methods=['GET', 'POST'])
 def login():

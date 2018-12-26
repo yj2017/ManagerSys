@@ -4,12 +4,16 @@ from models.Administrator import Administrator
 from config import app, db
 from models.User import User
 import views_auth
-
+from decorators import *
 
 @app.route('/test')
 def test():
     return render_template('index.html', uname=req.args['uname'])
 
+@app.route('/authtest')
+@login_required
+def test_auth():
+    return 'success'
 
 if __name__ == '__main__':
     # 如果修改了表结构，需要Ctrl+C退出程序，重新运行
