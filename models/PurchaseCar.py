@@ -4,7 +4,7 @@ import datetime
 
 
 class PurchaseCar(db.Model):
-    purchaseID = db.Column(db.Integer, primary_key=True,autoincrement=true)
+    purchaseID = db.Column(db.Integer, primary_key=True,autoincrement=True)
     productID = db.Column(db.Integer)
     userID = db.Column(db.Integer)
     purchaseTime=db.Column(db.Date)
