@@ -12,9 +12,10 @@ class Product(db.Model):
     originationt=db.Column(db.String(30))
     saleVolume= db.Column(db.Integer)
     view =db.Column(db.Integer)
+    imgPath=db.Column(db.String(100)) #图片路径
 
 
-    def __init__(self,userID=None,name=None,price=None, originationt=None,saleVolume=None,view=None,productID):
+    def __init__(self,userID=None,name=None,price=None, originationt=None,saleVolume=None,view=None,imgPath=None,productID=None):
         self.productID=productID
         self.userID=userID
         self.name=name
@@ -22,5 +23,6 @@ class Product(db.Model):
         self.originationt=originationt
         self.saleVolume=saleVolume
         self.view=view
+        self.imgPath=imgPath
         
 
