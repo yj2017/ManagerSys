@@ -12,7 +12,7 @@ def login():
         user = User.query.filter_by(username=uname).first()
         if user is None:
             return render_template('login.html', err_msg='用户名不存在！')
-        elif user.password != pswd:
+        elif user.pswd != pswd:
             return render_template('login.html', err_msg='密码错误！')
         else:
             session['user'] = user
