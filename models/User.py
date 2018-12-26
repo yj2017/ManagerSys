@@ -17,6 +17,7 @@ class User(db.Model):
 
     def __init__(self, username=None,pswd=None,birthday=None,sex=None,accPoint=None,address=None,telephone=None,role=None, userID=None):
         self.userID = userID
+        self.pswd=pswd
         self.username=username
         self.birthday = birthday
         self.accPoint=accPoint
