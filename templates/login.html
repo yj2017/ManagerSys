@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to XXXX</title>
+    <!-- <script src="/static/scripts/jquery.js"></script> -->
+    <!-- <script src="/static/scripts/md5.js"></script> -->
+    <!-- <script src="/static/scripts/common.js"></script> -->
+    <!-- <script src="/static/scripts/login.js"></script> -->
+    <link href="/static/css/main.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form class="loginBox" action="login" method="POST">
+            <div class="loginBoxCenter">
+                {% if err_msg%}
+                <div class="err_msg" id="error_hint">错误提示：{{err_msg}}</div>
+                {% endif%}
+                <label for="username" vertical-align: middle>账号：</label>
+                <div>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名" class="loginInput"
+                        vertical-align: middle; value="{{ request.form['username'] }}"> 
+                </div>
+                <br>
+                <label for="password" vertical-align: middle>密码：</label>
+                <div>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" class="loginInput">
+                </div>
+            </div>
+            <div class="loginBoxButtons">
+                <button id="btnReset" type="reset" class="resetBtn">重置</button>
+                <button id="btnRegister" type="submit" class="loginBtn">登录</button>
+                <br>
+                <a href="register.html" class="forgetLink">还没有账号？去注册</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
