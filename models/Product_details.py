@@ -7,7 +7,7 @@ class Product(db.Model):
     details=db.Column(db.String(100))
 
 
-    def __init__(self, productID=None,brand=None,type=None,details=None):
+    def __init__(self,brand=None,type=None,details=None, productID=None):
         self.productID=productID
         self.brand=brand
         self.details=details

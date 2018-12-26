@@ -10,7 +10,7 @@ class Order(db.Model):
     comment=db.Column(db.String(100))
     status=db.Column(db.Integer)
 
-    def __init__(self, orderID,productID,userID,sumMoney,oderTime ,comment ,status)
+    def __init__(self,productID,userID,sumMoney,oderTime ,comment ,status, orderID)
         self.orderID=orderID
         self.productID=productID
         self.userID=userID

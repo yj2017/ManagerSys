@@ -5,7 +5,7 @@ from config import db
 
 
 class Product(db.Model):
-    productID = db.Column(db.Integer, primary_key=True)
+    productID = db.Column(db.Integer, primary_key=True,autoincrement=True)
     userID = db.Column(db.Integer)
     name = db.Column(db.String(30))
     price=db.Column(db.Float)
@@ -14,7 +14,7 @@ class Product(db.Model):
     view =db.Column(db.Integer)
 
 
-    def __init__(self, productID=None,userID=None,name=None,price=None, originationt=None,saleVolume=None,view=None):
+    def __init__(self,userID=None,name=None,price=None, originationt=None,saleVolume=None,view=None,productID):
         self.productID=productID
         self.userID=userID
         self.name=name

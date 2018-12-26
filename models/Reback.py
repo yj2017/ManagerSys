@@ -10,7 +10,7 @@ class Reback(db.Model):
     rebackReason=db.Column(db.String(30))
     sumMoney=db.Column(db.Float)
 
-    def __init__(self,rebackID=None,orderID=None,rebackTime=None,rebackReason=None,sumMoney=None):
+    def __init__(self,orderID=None,rebackTime=None,rebackReason=None,sumMoney=None,rebackID=None):
         self.rebackID=rebackID
         self.orderID=orderID
         self.rebackReason=rebackReason

@@ -13,9 +13,9 @@ class User(db.Model):
     address= db.Column(db.String(30))
     telephone =db.Column(db.String(11))
     username=db.Column(db.String(30))
-    role=db.Column(db.Integer,default=0)
+    role=db.Column(db.Integer,default=1)
 
-    def __init__(self, userID=None, username=None,pswd=None,birthday=None,sex=None,accPoint=None,address=None,telephone=None,role=None):
+    def __init__(self, username=None,pswd=None,birthday=None,sex=None,accPoint=None,address=None,telephone=None,role=None, userID=None):
         self.userID = userID
         self.username=username
         self.birthday = birthday

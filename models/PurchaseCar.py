@@ -9,7 +9,7 @@ class PurchaseCar(db.Model):
     userID = db.Column(db.Integer)
     purchaseTime=db.Column(db.Date)
 
-    def __init__(self,purchaseID=None,productID=None, userID=None,purchaseTime=None):
+    def __init__(self,productID=None, userID=None,purchaseTime=None,purchaseID=None):
         self.purchaseID=purchaseID
         self.productID=productID
         self.userID=userID
