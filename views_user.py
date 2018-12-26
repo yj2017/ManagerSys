@@ -15,10 +15,11 @@ def login():
         elif user.pswd != pswd:
             return render_template('login.html', err_msg='密码错误！')
         else:
-            session['user'] = user
+            session['uid'] = user.userID
+            g.user = user
             return render_template('index.html')
     else:
-        if 'user' in session:
+        if 'uid' in session:
             return render_template('index.html')
         else:
             return render_template('login.html')
@@ -30,7 +31,7 @@ def register():
         uname = request.form['username']
         pswd = request.form['password']
         rpswd = request.form['rpassword']
-        if pswd == '' or pswd != rpswd:
+        if pswd == '' or rpswd == '' or pswd != rpswd:
             return render_template('register.html', err_msg='两次密码不同！')
 
         user = User.query.filter_by(username=uname).first()
@@ -48,4 +49,5 @@ def register():
 @app.route('/logout')
 @login_required
 def logout():
-    pass
+    session.clear()
+    return render_template('login.html', err_msg='退出登录！')

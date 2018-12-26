@@ -1,6 +1,8 @@
 from flask import Flask, render_template, session, request
 from flask_sqlalchemy import SQLAlchemy
 import os
+import json
+from flask.json import JSONEncoder
 
 
 app = Flask('网购系统')
