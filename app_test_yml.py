@@ -3,6 +3,7 @@ from flask import request as req
 from config import app, db
 from models.User import User
 import views_user
+import views_product
 from decorators import *
 
 @app.route('/test')

@@ -11,6 +11,11 @@
 <body>
     Hello ,管理员{{g.user.username}}!
     <img src="/static/a.png">
+    <a href="add_product">添加商品</a>
+    <a href="index">回首页</a>
+    {%if msg%}
+    {{msg}}
+    {%endif%}
 </body>
 
 </html>
