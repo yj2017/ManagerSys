@@ -20,6 +20,7 @@ def login():
             return render_template('index.html')
     else:
         if 'uid' in session:
+            g.user = User.query.get(session['uid'])
             return render_template('index.html')
         else:
             return render_template('login.html')
@@ -51,3 +52,16 @@ def register():
 def logout():
     session.clear()
     return render_template('login.html', err_msg='退出登录！')
+
+
+@app.route('/index')
+@login_required
+def index():
+    return render_template('index.html')
+
+
+@app.route('/index_admin')
+@login_required
+@admin_required
+def index_admin():
+    return render_template('index_admin.html')
