@@ -24,14 +24,14 @@
         <ul>
         {% for prod in prods%}
        <li style="display:block;">
-            商品名：{{prod.name}}
-            价格：{{prod.price}}
-            浏览量：{{prod.view}}
-            品牌:{{prod.brand}}
-            加入购物车时间:{{prod.chart.purchaseTime}}
-            <a href="/product_detail/{{prod.productID}}">查看详情</a>
-            <a href="buy/{{prod.productID}}">购买</a>
-            <a href="/del_cart/{{prod.chart.purchaseID}}">删除</a>
+            <div class="cols eight">商品名：{{prod.name}}</div>
+            <div class="cols eight">价格：{{prod.price}}</div>
+            <div class="cols eight">浏览量：{{prod.view}}</div>
+            <div class="cols eight">品牌:{{prod.brand}}</div>
+            <div class="cols eight">加入购物车时间:{{prod.chart.purchaseTime}}</div>
+            <a class="cols eight"  href="/product_detail/{{prod.productID}}">查看详情</a>
+            <a  class="cols eight" href="buy/{{prod.productID}}">购买</a>
+            <a  class="cols eight"  href="/del_cart/{{prod.chart.purchaseID}}">删除</a>
         </li>
         {%endfor%}
         </ul>

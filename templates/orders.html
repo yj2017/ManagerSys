@@ -25,12 +25,12 @@
     <ul>
     {% for prod in prods%}
  <li style="display:block;">   
-    商品名：{{prod.name}}
-    价格：{{prod.price}}
-    下单时间：{{prod.order.orderTime}}
-    总价：{{prod.order.sumMoney}}
-    <a href="/product_detail/{{prod.productID}}">查看详情</a>
-</li>>
+        <div class="cols eight"> 商品名：{{prod.name}}</div>
+        <div class="cols eight"> 价格：{{prod.price}}</div>
+        <div class="cols eight">下单时间：{{prod.order.orderTime}}</div>
+        <div class="cols eight">总价：{{prod.order.sumMoney}}</div>
+        <a href="/product_detail/{{prod.productID}}" class="cols eight" >查看详情</a>
+</li>
     {%endfor%}
 </ul>  
 </div>
