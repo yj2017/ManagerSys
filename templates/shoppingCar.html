@@ -20,9 +20,12 @@
     <hr />
     商品名：{{prod.name}}
     价格：{{prod.price}}
+    加入购物车时间：{{prod.chart.purchaseTime}}
 
     <a href="/product_detail/{{prod.productID}}">查看详情</a>
-    <a href="/del_cart/{{prod.chartID}}">删除</a>
+    <a href="buy/{{prod.productID}}">购买</a>
+    <a href="/del_cart/{{prod.chart.purchaseID}}">删除</a>
+
     {%endfor%}
 </body>
 
