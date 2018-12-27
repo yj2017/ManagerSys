@@ -10,8 +10,8 @@ class Product(db.Model):
     name = db.Column(db.String(30))
     price=db.Column(db.Float)
     origination=db.Column(db.String(30))
-    saleVolume= db.Column(db.Integer)
-    view =db.Column(db.Integer)
+    saleVolume= db.Column(db.Integer,default=0)
+    view =db.Column(db.Integer,default=0)
     imgPath=db.Column(db.String(100)) #图片路径
     #details
     brand=db.Column(db.String(30))

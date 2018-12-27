@@ -31,14 +31,14 @@ def add_product():
         prod.price = f['price']
         #在这里补全其它属性
         prod.origination=f['origination']
-        prod.saleVolume=f['saleVolume']
-        prod.view=f['view']
-        # prod.userID=f['userID']
+        # prod.saleVolume=f['saleVolume']
+        # prod.view=f['view']
+        # prod.userID=f['userID']         ?????
         prod.brand=f['brand']
         prod.type=f['type']
         prod.details=f['details']
+        # prod.imgPath=f['imgPath']
         db.session.add(prod)
-    
         db.session.commit()
         return render_template('index_admin.html', msg='添加成功！')
     else:

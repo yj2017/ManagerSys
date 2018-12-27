@@ -3,7 +3,6 @@ from flask import request as req
 from config import app, db
 from models.User import User
 from models.product import Product
-from models.Product_details import Product_details
 from models.ProductOrder import ProductOrder 
 import views_user
 import views_product
