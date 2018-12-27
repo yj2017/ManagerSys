@@ -14,6 +14,7 @@
     <div class="wrapper">
         <form class="loginBox" action='add_product' method="POST">
             <div class="loginBoxCenter">
+                <a href="/index">回首页</a>
                 {% if err_msg%}
                 <div class="err_msg" id="error_hint">提示：{{err_msg}}</div>
                 {% endif%}

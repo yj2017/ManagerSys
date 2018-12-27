@@ -17,8 +17,6 @@ def test_auth():
 
 if __name__ == '__main__':
     # 如果修改了表结构，需要Ctrl+C退出程序，重新运行
-    u = User()
-    print(u.__dict__)
     db.create_all()  # 生成数据库表结构
 
     # 在这里写测试代码

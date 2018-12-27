@@ -5,18 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>首页</title>
+    <title>商品详情--{{prod.name}}</title>
 </head>
 
 <body>
-    Hello ,管理员{{g.user.username}}!
-    {%if msg%}
-    {{msg}}
-    {%endif%}
-    <img src="/static/a.png">
-    <a href="add_product">添加商品</a>
     <a href="/index">回首页</a>
-
+    名称：{{prod.name}}
+    价格：{{prod.price}}
+    浏览：{{prod.view}}
 </body>
 
 </html>

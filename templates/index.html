@@ -10,16 +10,21 @@
 
 <body>
     Hello ,{{g.user.username}}!
-    <img src="/static/a.png">
+    {%if msg%}
+    {{msg}}
+    {%endif%}
     <!-- {% if g.user.role==0%}
     <a href="index_admin">管理员首页</a>
     {%endif%} -->
     <a href="/index_admin">管理员首页</a>
+    <a href="chart">我的购物车</a>
     {% for prod in prods%}
     <hr />
     商品名：{{prod.name}}
     价格：{{prod.price}}
 
+    <a href="product_detail/{{prod.productID}}">查看详情</a>
+    <a href="add_cart/{{prod.productID}}">加入购物车</a>
     {%endfor%}
 </body>
 
