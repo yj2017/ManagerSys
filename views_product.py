@@ -65,6 +65,17 @@ def add_cart(pid):
     db.session.commit()
     return redirect(url_for('chart', msg='加入成功！'))
 
+@app.route('/del_cart/<int:pid>')
+@login_required
+def del_cart(pid):
+    chart = PurchaseCar.query.get(pid)
+    if chart:
+        db.session.delete(chart)
+        db.session.commit()
+        return redirect(url_for('chart', msg='删除成功！'))
+    else:
+        return redirect(url_for('chart', msg='删除失败！'))
+    
 
 @app.route('/chart')
 @login_required
@@ -73,5 +84,7 @@ def chart():
         userID=g.user.userID).order_by(PurchaseCar.purchaseTime.desc()).all()
     prods = []
     for c in chart:
-        prods.append(Product.query.get(c.productID))
+        prod = Product.query.get(c.productID)
+        prod.chartID = c.purchaseID
+        prods.append(prod)
     return render_template('shoppingCar.html', prods=prods)
