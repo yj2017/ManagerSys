@@ -21,19 +21,30 @@
         {%if request.args['msg']%}
         {{request.args['msg']}}
         {%endif%}
+        <ul>
         {% for prod in prods%}
-        <fieldset>
+       <li style="display:block;">
             商品名：{{prod.name}}
             价格：{{prod.price}}
-            浏览：{{prod.view}}
-            品牌：{{prod.brand}}
-            加入购物车时间：{{prod.chart.purchaseTime}}
+            浏览量：{{prod.view}}
+            品牌:{{prod.brand}}
+            加入购物车时间:{{prod.chart.purchaseTime}}
             <a href="/product_detail/{{prod.productID}}">查看详情</a>
             <a href="buy/{{prod.productID}}">购买</a>
             <a href="/del_cart/{{prod.chart.purchaseID}}">删除</a>
-        </fieldset>
+        </li>
         {%endfor%}
+        </ul>
+        </table>
     </div>
 </body>
+<style>
+    li:nth-of-type(even) {
+    background-color: white;
+}
 
+    li:nth-of-type(odd) {
+    background-color: #F0F4F6;
+}
+</style>
 </html>

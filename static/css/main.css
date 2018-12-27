@@ -189,12 +189,16 @@ ul li{
 
    
 }
-.middle_display{
-    background-color:  #F0F4F6;
 
-}
 /*product_details展示style*/
 .lbl{
  width:20px;
  vertical-align: middle;
 }
+.li:nth-of-type(even) {
+        background-color: white;
+    }
+
+.li:nth-of-type(odd) {
+        background-color: #F0F4F6;
+    }

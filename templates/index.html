@@ -9,20 +9,22 @@
     <title>首页</title>
 </head>
 
-<body>
+<body style="margin:0;padding:8px;">
     <div class="top">
-        Hello ,{{g.user.username}}!
-        {%if msg%}
-        {{msg}}
-        {%endif%}
+        <div class="cols six">
+            Hello ,{{g.user.username}}!
+        </div>
+        <a class="cols six" href="chart" class="forgetLink">我的购物车</a>
+        <a class="cols six" href="orders" class="forgetLink">我的订单</a>
         {% if g.user.role==0%}
-        <a href="index_admin" class="forgetLink">管理员首页</a>
+        <a class="cols six" href="index_admin" class="forgetLink">管理员首页</a>
         {%endif%}
-        <a href="chart" class="forgetLink">我的购物车</a>
-        <a href="orders" class="forgetLink">我的订单</a>
+        {%if msg%}
+        <div class="cols six">{{msg}}</div>
+        {%endif%}
     </div>
     <hr />
-    <div class="middle">
+    <div>
         <form action="search" method="POST">
             <input type="search" id="search" name="search" placeholder="搜索" class="loginInput" value="{{ request.form['search'] }}">
             <button type="submit" class="loginBtn">搜索</button>
@@ -46,23 +48,31 @@
 </body>
 <style>
     li:nth-of-type(even) {
-        background-color: green;
+        background-color: white;
     }
 
     li:nth-of-type(odd) {
-        background-color: blue;
+        background-color: #F0F4F6;
     }
 
     .cols {
         display: inline-block;
     }
 
-    .threee {
-        width: 33.333%
+    .three {
+        width: 33%
     }
 
     .four {
         width: 25%;
+    }
+
+    .five {
+        width: 20%;
+    }
+
+    .six {
+        width: 16%;
     }
 
     .eight {
