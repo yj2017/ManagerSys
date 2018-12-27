@@ -33,7 +33,7 @@ def add_product():
         prod.price = float(f['price'])
         #在这里补全其它属性
         prod.origination=f['origination']
-        prod.saleVolume=int(f['saleVolume'])
+        # prod.saleVolume=int(f['saleVolume'])
         # prod.view=f['view']
         # prod.userID=f['userID']
         prod.brand=f['brand']
@@ -70,7 +70,7 @@ def add_cart(pid):
 @login_required
 def chart():
     chart = PurchaseCar.query.filter_by(
-        userID=g.user.userID).order_by(PurchaseCar.purchaseTime).all()
+        userID=g.user.userID).order_by(PurchaseCar.purchaseTime.desc()).all()
     prods = []
     for c in chart:
         prods.append(Product.query.get(c.productID))
