@@ -6,10 +6,6 @@ import views_user
 import views_product
 from decorators import *
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-
 if __name__ == '__main__':
+    db.create_all()
     app.run(debug=True)
