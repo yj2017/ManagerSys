@@ -11,9 +11,16 @@
 <body>
     Hello ,{{g.user.username}}!
     <img src="/static/a.png">
-    {% if g.user.role==0%}
+    <!-- {% if g.user.role==0%}
     <a href="index_admin">管理员首页</a>
-    {%endif%}
+    {%endif%} -->
+    <a href="/index_admin">管理员首页</a>
+    {% for prod in prods%}
+    <hr />
+    商品名：{{prod.name}}
+    价格：{{prod.price}}
+
+    {%endfor%}
 </body>
 
 </html>

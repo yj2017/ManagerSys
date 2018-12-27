@@ -6,6 +6,7 @@ from models.product import Product
 from models.Product_details import Product_details
 from models.ProductOrder import ProductOrder 
 import views_user
+import views_product
 import datetime
 
 

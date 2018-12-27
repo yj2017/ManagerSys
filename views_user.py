@@ -17,11 +17,13 @@ def login():
         else:
             session['uid'] = user.userID
             g.user = user
-            return render_template('index.html')
+            # return render_template('index.html')
+            return redirect(url_for('index'))
     else:
         if 'uid' in session:
             g.user = User.query.get(session['uid'])
-            return render_template('index.html')
+            # return render_template('index.html')
+            return redirect(url_for('index'))
         else:
             return render_template('login.html')
 
@@ -54,14 +56,3 @@ def logout():
     return render_template('login.html', err_msg='退出登录！')
 
 
-@app.route('/index')
-@login_required
-def index():
-    return render_template('index.html')
-
-
-@app.route('/index_admin')
-@login_required
-@admin_required
-def index_admin():
-    return render_template('index_admin.html')
