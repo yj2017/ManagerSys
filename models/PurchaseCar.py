@@ -7,7 +7,7 @@ class PurchaseCar(db.Model):
     purchaseID = db.Column(db.Integer, primary_key=True,autoincrement=True)
     productID = db.Column(db.Integer)
     userID = db.Column(db.Integer)
-    purchaseTime=db.Column(db.Date)
+    purchaseTime=db.Column(db.DateTime)
 
     def __init__(self,productID=None, userID=None,purchaseTime=None,purchaseID=None):
         self.purchaseID=purchaseID
