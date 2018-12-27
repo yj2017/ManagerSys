@@ -16,6 +16,16 @@ def index():
     return render_template('index.html', prods=prods)
 
 
+@app.route('/search', methods=['POST'])
+@login_required
+def search():
+    query = request.form['search']
+    prods = Product.query.filter(
+        or_(Product.name.contains(query), Product.type.contains(query))).all()
+    print(len(prods))
+    return render_template('index.html', prods=prods)
+
+
 @app.route('/index_admin')
 @login_required
 # @admin_required
@@ -32,18 +42,17 @@ def add_product():
         prod = Product()
         prod.name = f['productName']
         prod.price = float(f['price'])
-        #在这里补全其它属性
-        prod.origination=f['origination']
+        # 在这里补全其它属性
+        prod.origination = f['origination']
         # prod.saleVolume=f['saleVolume']
         # prod.saleVolume=int(f['saleVolume'])
         # prod.view=f['view']
         # prod.userID=f['userID']         ?????
-        prod.brand=f['brand']
-        prod.type=f['type']
-        prod.details=f['details']
+        prod.brand = f['brand']
+        prod.type = f['type']
+        prod.details = f['details']
         # prod.imgPath=f['imgPath']
         db.session.add(prod)
-    
 
         db.session.commit()
         return render_template('index_admin.html', msg='添加成功！')
@@ -95,11 +104,13 @@ def chart():
     return render_template('shoppingCar.html', prods=prods)
 
 # 订单
+
+
 @app.route('/buy/<int:pid>')
 @login_required
 def buy(pid):
     prod = Product.query.get(pid)
-    prod.saleVolume=prod.saleVolume+1
+    prod.saleVolume = prod.saleVolume+1
     order = ProductOrder()
     order.userID = g.user.userID
     order.orderTime = datetime.now()

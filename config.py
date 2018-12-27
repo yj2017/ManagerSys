@@ -1,5 +1,6 @@
 from flask import Flask, render_template, session, request
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import or_
 import os
 import json
 from flask.json import JSONEncoder

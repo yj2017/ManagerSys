@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,41 @@
     <link href="/static/css/main.css" type="text/css" rel="stylesheet">
     <title>首页</title>
 </head>
+
 <body>
     <div class="top">
-    Hello ,{{g.user.username}}!
-    {%if msg%}
-    {{msg}}
-    {%endif%}
-    {% if g.user.role==0%}
-    <a href="index_admin" class="forgetLink" >管理员首页</a>
-    {%endif%}
-    <a href="chart"  class="forgetLink">我的购物车</a>
-    <a href="orders"  class="forgetLink">我的订单</a>
+        Hello ,{{g.user.username}}!
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+        {% if g.user.role==0%}
+        <a href="index_admin" class="forgetLink">管理员首页</a>
+        {%endif%}
+        <a href="chart" class="forgetLink">我的购物车</a>
+        <a href="orders" class="forgetLink">我的订单</a>
     </div>
     <hr />
     <div class="middle">
-    <input type="search" id="search" name="search" placeholder="搜索" class="loginInput" value="{{ request.form['searchText'] }}" >
-    <button id="search" type="submit" class="loginBtn">搜索</button>
-    <hr/>
-    {% for prod in prods%}
-    
-    <fieldset>
-    商品名：{{prod.name}}
-    价格：{{prod.price}}
-    货源地：{{prod.origination}}
-    销量：{{prod.saleVolume}}
-    浏览量：{{prod.view}}
+        <form action="search" method="POST">
+            <input type="search" id="search" name="search" placeholder="搜索" class="loginInput" value="{{ request.form['search'] }}">
+            <button type="submit" class="loginBtn">搜索</button>
+        </form>
+        <hr />
+        {% for prod in prods%}
 
-    <a href="product_detail/{{prod.productID}}"  class="forgetLink">查看详情</a>
-    <a href="add_cart/{{prod.productID}}" class="forgetLink">加入购物车</a>
-    <a href="buy/{{prod.productID}}" class="forgetLink">购买</a>
-    </fieldset>
-    {%endfor%}
-</div>
+        <fieldset>
+            商品名：{{prod.name}}
+            价格：{{prod.price}}
+            货源地：{{prod.origination}}
+            销量：{{prod.saleVolume}}
+            浏览量：{{prod.view}}
+
+            <a href="product_detail/{{prod.productID}}" class="forgetLink">查看详情</a>
+            <a href="add_cart/{{prod.productID}}" class="forgetLink">加入购物车</a>
+            <a href="buy/{{prod.productID}}" class="forgetLink">购买</a>
+        </fieldset>
+        {%endfor%}
+    </div>
 </body>
 
 </html>
