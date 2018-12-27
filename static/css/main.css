@@ -98,6 +98,7 @@ a.link_style{
     vertical-align: middle;
 }
 a{
+    color: rgb(26, 228, 211);
     text-decoration:none; 
 }
 
@@ -184,7 +185,7 @@ ul li{
 }
 
 .top{
-    background-color: rgb(26, 228, 211);
+    background-color: #F0F4F6;
 
    
 }
