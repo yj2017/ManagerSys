@@ -32,7 +32,6 @@ def add_product():
         prod = Product()
         prod.name = f['productName']
         prod.price = float(f['price'])
-<<<<<<< HEAD
         #在这里补全其它属性
         prod.origination=f['origination']
         # prod.saleVolume=f['saleVolume']
@@ -44,18 +43,8 @@ def add_product():
         prod.details=f['details']
         # prod.imgPath=f['imgPath']
         db.session.add(prod)
-=======
-        # 在这里补全其它属性
-        prod.origination = f['origination']
-        # prod.saleVolume=int(f['saleVolume'])
-        # prod.view=f['view']
-        # prod.userID=f['userID']
-        prod.brand = f['brand']
-        prod.type = f['type']
-        prod.details = f['details']
-        db.session.add(prod)
+    
 
->>>>>>> 9f4bb0024d5eb9f171bb1c74efca498eec761f1c
         db.session.commit()
         return render_template('index_admin.html', msg='添加成功！')
     else:
@@ -106,12 +95,11 @@ def chart():
     return render_template('shoppingCar.html', prods=prods)
 
 # 订单
-
-
 @app.route('/buy/<int:pid>')
 @login_required
 def buy(pid):
     prod = Product.query.get(pid)
+    prod.saleVolume=prod.saleVolume+1
     order = ProductOrder()
     order.userID = g.user.userID
     order.orderTime = datetime.now()

@@ -97,6 +97,9 @@ a.link_style{
     text-decoration: none;
     vertical-align: middle;
 }
+a{
+    text-decoration:none; 
+}
 
 .loginBox a.forgetLink:HOVER {
     color: #000000;
@@ -132,7 +135,7 @@ ul li{
 
 }
 .main_top{
-    background-color: #F0F4F6;
+    background-color:  rgb(26, 228, 211);
     height: 40px;
    
 }
@@ -146,13 +149,16 @@ ul li{
     position: relative;
 }
 .search {
+    border: 1px solid #D2D9dC;
+    border-radius: 2px;
+    color: #444;
+    font: 14px 'Microsoft YaHei', '微软雅黑';
+    /* margin-bottom: 8px; */
+    width: 100%;
+    /* vertical-align: middle; */
     margin:0cm 10cm 10cm 0cm;
-    width: 500px;
-    height: 40px;
-    border-radius: 18px;
+    height: 8px;
     outline: none;
-    border: 1px solid #ccc;
-    padding-left: 20px;
     position: absolute;
 }
 .btnSearch {
@@ -177,4 +183,17 @@ ul li{
     height: 20px;
 }
 
+.top{
+    background-color: rgb(26, 228, 211);
 
+   
+}
+.middle_display{
+    background-color:  #F0F4F6;
+
+}
+/*product_details展示style*/
+.lbl{
+ width:20px;
+ vertical-align: middle;
+}

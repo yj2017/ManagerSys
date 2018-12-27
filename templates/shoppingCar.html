@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/static/css/main.css" type="text/css" rel="stylesheet">
     <title>购物车</title>
 </head>
 
 <body>
+    <div class="top">
     <a href="/index">回首页</a>
+ </div>
+ <hr>
+ <div class="middle">
     {%if msg%}
     {{msg}}
     {%endif%}
@@ -17,28 +22,18 @@
     {{request.args['msg']}}
     {%endif%}
     {% for prod in prods%}
-    <hr />
+    <fieldset>
     商品名：{{prod.name}}
     价格：{{prod.price}}
-<<<<<<< HEAD
-<<<<<<< HEAD
     浏览：{{prod.view}}
     品牌：{{prod.brand}}
-    <a href="product_detail/{{prod.productID}}">查看详情</a>
-=======
-
-    <a href="/product_detail/{{prod.productID}}">查看详情</a>
-    <a href="/del_cart/{{prod.chartID}}">删除</a>
->>>>>>> f7d9007a2c0e9115b8cb3e549ac0fadbce3df5ce
-=======
     加入购物车时间：{{prod.chart.purchaseTime}}
-
     <a href="/product_detail/{{prod.productID}}">查看详情</a>
     <a href="buy/{{prod.productID}}">购买</a>
     <a href="/del_cart/{{prod.chart.purchaseID}}">删除</a>
-
->>>>>>> 9f4bb0024d5eb9f171bb1c74efca498eec761f1c
+</fieldset>
     {%endfor%}
+</div>
 </body>
 
 </html>
