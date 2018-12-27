@@ -32,6 +32,7 @@ def add_product():
         prod = Product()
         prod.name = f['productName']
         prod.price = float(f['price'])
+<<<<<<< HEAD
         #在这里补全其它属性
         prod.origination=f['origination']
         # prod.saleVolume=f['saleVolume']
@@ -45,6 +46,17 @@ def add_product():
         db.session.add(prod)
     
 
+=======
+        # 在这里补全其它属性
+        prod.origination = f['origination']
+        # prod.saleVolume=int(f['saleVolume'])
+        # prod.view=f['view']
+        # prod.userID=f['userID']
+        prod.brand = f['brand']
+        prod.type = f['type']
+        prod.details = f['details']
+        db.session.add(prod)
+>>>>>>> 030889d739f58948631cc56c75d704e37f208f8f
         db.session.commit()
         return render_template('index_admin.html', msg='添加成功！')
     else:
