@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+</head>
+
+<body>
+    <a href="/index">回首页</a>
+    {%if msg%}
+    {{msg}}
+    {%endif%}
+    {%if request.args['msg']%}
+    {{request.args['msg']}}
+    {%endif%}
+    {% for prod in prods%}
+    <hr />
+    商品名：{{prod.name}}
+    价格：{{prod.price}}
+    浏览：{{prod.view}}
+    品牌：{{prod.brand}}
+    <a href="product_detail/{{prod.productID}}">查看详情</a>
+    {%endfor%}
+</body>
+
+</html>
