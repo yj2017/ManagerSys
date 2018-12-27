@@ -1,13 +1,11 @@
-from flask import Flask
-from models.Administrator import Administrator
+from flask import Flask, render_template
+from flask import request as req
 from config import app, db
-import views_auth
-
-
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
-
+from models.User import User
+import views_user
+import views_product
+from decorators import *
 
 if __name__ == '__main__':
+    db.create_all()
     app.run(debug=True)
