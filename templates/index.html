@@ -31,15 +31,14 @@
         <ul>
             {% for prod in prods%}
             <li style="display:block;">
-                商品名：{{prod.name}}
-                价格：{{prod.price}}
-                货源地：{{prod.origination}}
-                销量：{{prod.saleVolume}}
-                浏览量：{{prod.view}}
-
-                <a href="product_detail/{{prod.productID}}" class="forgetLink">查看详情</a>
-                <a href="add_cart/{{prod.productID}}" class="forgetLink">加入购物车</a>
-                <a href="buy/{{prod.productID}}" class="forgetLink">购买</a>
+                <div class="cols eight"> 商品名：{{prod.name}}</div>
+                <div class="cols eight">价格：{{prod.price}}</div>
+                <div class="cols eight">货源地：{{prod.origination}}</div>
+                <div class="cols eight">销量：{{prod.saleVolume}}</div>
+                <div class="cols eight">浏览量：{{prod.view}}</div>
+                <a class="cols eight" href="product_detail/{{prod.productID}}" class="forgetLink">查看详情</a>
+                <a class="cols eight" href="add_cart/{{prod.productID}}" class="forgetLink">加入购物车</a>
+                <a class="cols eight" href="buy/{{prod.productID}}" class="forgetLink">购买</a>
             </li>
             {%endfor%}
         </ul>
@@ -52,6 +51,22 @@
 
     li:nth-of-type(odd) {
         background-color: blue;
+    }
+
+    .cols {
+        display: inline-block;
+    }
+
+    .threee {
+        width: 33.333%
+    }
+
+    .four {
+        width: 25%;
+    }
+
+    .eight {
+        width: 12.5%;
     }
 </style>
 
