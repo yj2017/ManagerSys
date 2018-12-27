@@ -28,21 +28,31 @@
             <button type="submit" class="loginBtn">搜索</button>
         </form>
         <hr />
-        {% for prod in prods%}
+        <ul>
+            {% for prod in prods%}
+            <li style="display:block;">
+                商品名：{{prod.name}}
+                价格：{{prod.price}}
+                货源地：{{prod.origination}}
+                销量：{{prod.saleVolume}}
+                浏览量：{{prod.view}}
 
-        <fieldset>
-            商品名：{{prod.name}}
-            价格：{{prod.price}}
-            货源地：{{prod.origination}}
-            销量：{{prod.saleVolume}}
-            浏览量：{{prod.view}}
-
-            <a href="product_detail/{{prod.productID}}" class="forgetLink">查看详情</a>
-            <a href="add_cart/{{prod.productID}}" class="forgetLink">加入购物车</a>
-            <a href="buy/{{prod.productID}}" class="forgetLink">购买</a>
-        </fieldset>
-        {%endfor%}
+                <a href="product_detail/{{prod.productID}}" class="forgetLink">查看详情</a>
+                <a href="add_cart/{{prod.productID}}" class="forgetLink">加入购物车</a>
+                <a href="buy/{{prod.productID}}" class="forgetLink">购买</a>
+            </li>
+            {%endfor%}
+        </ul>
     </div>
 </body>
+<style>
+    li:nth-of-type(even) {
+        background-color: green;
+    }
+
+    li:nth-of-type(odd) {
+        background-color: blue;
+    }
+</style>
 
 </html>
